@@ -12,7 +12,7 @@ CROP_CONFIG = {
         "points_temp": 40,
         "points_rain": 30,
         "points_humidity": 30,
-        "description": "Maize in East Africa should usually be harvested during warm, relatively dry conditions so cobs can dry properly and avoid mold damage.",
+        "description": "Maize is a staple grain crop in Ethiopia requiring warm dry conditions at harvest time.",
     },
     "wheat": {
         "temp_min": 15,
@@ -23,7 +23,7 @@ CROP_CONFIG = {
         "points_temp": 40,
         "points_rain": 30,
         "points_humidity": 30,
-        "description": "Wheat harvest is best in cool to mild, low-rain conditions with lower humidity to reduce grain moisture and post-harvest losses.",
+        "description": "Wheat is a cool-season grain that needs dry low-humidity conditions to avoid fungal disease at harvest.",
     },
     "rice": {
         "temp_min": 25,
@@ -34,7 +34,7 @@ CROP_CONFIG = {
         "points_temp": 40,
         "points_rain": 30,
         "points_humidity": 30,
-        "description": "Rice near harvest can tolerate warmer and more humid conditions, but excessive rain still increases drying difficulty and grain quality risks.",
+        "description": "Rice is a warm-season crop that tolerates higher humidity but needs rain to stop before harvest.",
     },
     "coffee": {
         "temp_min": 18,
@@ -45,7 +45,7 @@ CROP_CONFIG = {
         "points_temp": 40,
         "points_rain": 30,
         "points_humidity": 30,
-        "description": "Coffee cherries should be harvested in mild temperatures with limited rainfall and moderate humidity to protect bean quality and drying conditions.",
+        "description": "Ethiopian coffee requires mild temperatures and moderate dry conditions for quality cherry harvest.",
     },
     "sorghum": {
         "temp_min": 25,
@@ -56,11 +56,20 @@ CROP_CONFIG = {
         "points_temp": 40,
         "points_rain": 30,
         "points_humidity": 30,
-        "description": "Sorghum performs best for harvest in warm, dry weather with lower humidity so heads dry down well and weather damage is minimized.",
+        "description": "Sorghum is a drought-tolerant grain that needs hot dry weather at harvest to prevent mold and rot.",
     },
 }
 
 
 if __name__ == "__main__":
-    for crop_name, rules in CROP_CONFIG.items():
-        print(f"{crop_name}: {rules}")
+    print("=== CROP CONFIG LOADED ===\n")
+    for crop, rules in CROP_CONFIG.items():
+        print(f"Crop:        {crop.upper()}")
+        print(f"  Temp:      {rules['temp_min']}C - {rules['temp_max']}C")
+        print(f"  Max Rain:  {rules['max_rain']}mm/day")
+        print(f"  Humidity:  {rules['humidity_min']}% - {rules['humidity_max']}%")
+        print(
+            f"  Points:    temp={rules['points_temp']} "
+            f"rain={rules['points_rain']} humidity={rules['points_humidity']}"
+        )
+        print()
