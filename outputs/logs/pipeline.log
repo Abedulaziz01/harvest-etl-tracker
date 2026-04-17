@@ -1,0 +1,15 @@
+2026-04-17 17:25:05,888 - INFO - Pipeline started | Crop: wheat | City: Addis Ababa
+2026-04-17 17:25:06,757 - INFO - Extract complete - 7 days of weather received
+2026-04-17 17:25:10,066 - INFO - Transform complete - Crop: wheat | Score: 40/100
+2026-04-17 17:25:10,107 - INFO - Load complete - files saved
+2026-04-17 17:25:10,107 - INFO - Pipeline complete
+2026-04-17 17:25:26,583 - INFO - Pipeline started | Crop: wheat | City: Addis Ababa
+2026-04-17 17:25:27,254 - INFO - Extract complete - 7 days of weather received
+2026-04-17 17:25:29,661 - INFO - Transform complete - Crop: wheat | Score: 40/100
+2026-04-17 17:25:29,682 - INFO - Load complete - files saved
+2026-04-17 17:25:29,682 - INFO - Pipeline complete
+2026-04-17 17:25:35,031 - INFO - Pipeline started | Crop: wheat | City: Addis Ababa
+2026-04-17 17:25:35,683 - INFO - Extract complete - 7 days of weather received
+2026-04-17 17:25:38,051 - INFO - Transform complete - Crop: wheat | Score: 40/100
+2026-04-17 17:25:38,068 - INFO - Load complete - files saved
+2026-04-17 17:25:38,068 - INFO - Pipeline complete

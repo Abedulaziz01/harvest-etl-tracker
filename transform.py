@@ -106,6 +106,16 @@ this week, and how to store this crop properly. Use simple language.
     return advice
 
 
+def transform_weather(weather_data):
+    score_data = calculate_score(weather_data)
+    if not score_data:
+        return None
+
+    advice = get_ai_advice(score_data)
+    score_data["advice"] = advice
+    return score_data
+
+
 if __name__ == "__main__":
     test_weather = {
         "city": CITY,
@@ -123,13 +133,10 @@ if __name__ == "__main__":
         "humidity": [58, 61, 65, 57, 60, 63, 59],
     }
 
-    score_data = calculate_score(test_weather)
+    score_data = transform_weather(test_weather)
 
     if score_data:
-        advice = get_ai_advice(score_data)
-        score_data["advice"] = advice
-
-        print(f"\nAdvice: {advice}")
+        print(f"\nAdvice: {score_data['advice']}")
         print("\n--- Transform Result ---")
         print(
             f"Crop: {score_data['crop']} | Score: {score_data['score']}/100 | "

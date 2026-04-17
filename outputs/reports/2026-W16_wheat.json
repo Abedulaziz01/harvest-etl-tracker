@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-04-17T17:25:38",
+  "week": "2026-W16",
+  "city": "Addis Ababa",
+  "crop": "wheat",
+  "score": 40,
+  "interpretation": "Fair - consider waiting or take precautions",
+  "weather_summary": {
+    "avg_temp": 24.1,
+    "avg_rain": 1.6,
+    "avg_humidity": 95.3
+  },
+  "advice": "It's not yet the best time to harvest your wheat, wait a bit longer. This week, watch out for too much rain and high humidity, which can bring fungal diseases to your crop. When you harvest, make sure to dry the wheat well and store it in a dry, well-ventilated place to keep it safe from damage. Also, be prepared for potential rain, and consider harvesting when the weather is dry to minimize the risk of disease and spoilage."
+}
