@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-04-17T17:12:42",
+  "week": "2026-W16",
+  "city": "Addis Ababa",
+  "crop": "maize",
+  "score": 100,
+  "interpretation": "Excellent - ideal time to harvest",
+  "weather_summary": {
+    "avg_temp": 22.4,
+    "avg_rain": 0.4,
+    "avg_humidity": 60.4
+  },
+  "advice": "Conditions are excellent for maize harvest this week. Harvest early while rainfall stays low and keep storage dry and ventilated."
+}
