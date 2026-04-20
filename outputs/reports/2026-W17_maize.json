@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-04-20T11:33:33",
+  "week": "2026-W17",
+  "city": "Addis Ababa",
+  "crop": "maize",
+  "score": 70,
+  "interpretation": "Good - harvest possible with minor caution",
+  "weather_summary": {
+    "avg_temp": 24.0,
+    "avg_rain": 0.9,
+    "avg_humidity": 95.1
+  },
+  "advice": "For your maize crop, now is a good time to start harvesting, but be careful because the humidity is high. This week, watch out for too much rain, more than 2mm per day, which can ruin your crop. To store your maize properly, make sure it is completely dry, and keep it in a cool, dry place to prevent mold and rot. Harvest your maize when the kernels are hard and the moisture content is low, and do it quickly before the rain comes, to ensure a good quality crop."
+}

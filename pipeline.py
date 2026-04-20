@@ -29,11 +29,13 @@ def get_logger():
     return logger
 
 
-def run_pipeline():
+def run_pipeline(city=None, latitude=None, longitude=None, crop=None):
     logger = get_logger()
 
-    crop = os.getenv("CROP", "maize").lower()
-    city = os.getenv("CITY", "Unknown")
+    crop = (crop or os.getenv("CROP", "maize")).lower()
+    city = city or os.getenv("CITY", "Unknown")
+    latitude = latitude or os.getenv("LATITUDE")
+    longitude = longitude or os.getenv("LONGITUDE")
     started = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     print("=" * 40)
@@ -45,14 +47,14 @@ def run_pipeline():
     logger.info("Pipeline started | Crop: %s | City: %s", crop, city)
 
     print(f"\n[ 1/3 ] EXTRACT - Fetching 7-day weather for {city}...")
-    weather_data = fetch_weather()
+    weather_data = fetch_weather(city=city, latitude=latitude, longitude=longitude)
     if not weather_data:
         logger.error("Extract failed - no weather data returned")
         raise ValueError("Extract step failed - no weather data returned.")
     logger.info("Extract complete - 7 days of weather received")
 
     print(f"[ 2/3 ] TRANSFORM - Scoring {crop} + getting Groq advice...")
-    transformed_data = transform_weather(weather_data)
+    transformed_data = transform_weather(weather_data, crop=crop, city=city)
     if not transformed_data:
         logger.error("Transform failed - no transformed data returned")
         raise ValueError("Transform step failed - no score data returned.")
@@ -78,6 +80,11 @@ def run_pipeline():
         "crop": transformed_data["crop"],
         "score": transformed_data["score"],
         "interpretation": transformed_data["interpretation"],
+        "avg_temp": transformed_data["avg_temp"],
+        "avg_rain": transformed_data["avg_rain"],
+        "avg_humidity": transformed_data["avg_humidity"],
+        "advice": transformed_data["advice"],
+        "city": transformed_data["city"],
         "csv_path": saved_paths["csv_path"],
         "report_path": saved_paths["report_path"],
     }

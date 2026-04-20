@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-04-20T09:31:59",
+  "week": "2026-W17",
+  "city": "Addis Ababa",
+  "crop": "wheat",
+  "score": 70,
+  "interpretation": "Good - harvest possible with minor caution",
+  "weather_summary": {
+    "avg_temp": 24.0,
+    "avg_rain": 0.9,
+    "avg_humidity": 95.1
+  },
+  "advice": "It's almost time to harvest your wheat, but wait a few more days until the humidity drops a bit. This week, watch out for rainy days, as the current high humidity can bring fungal disease to your wheat - check the skies daily and be ready to harvest quickly if it starts to rain. To store your wheat properly, make sure it's completely dry and keep it in a well-ventilated, dry area to prevent mold and spoilage. Harvest your wheat when the weather is dry and sunny, and consider doing it in the morning when the dew has dried up."
+}

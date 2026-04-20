@@ -7,10 +7,6 @@ from crop_config import CROP_CONFIG
 
 load_dotenv()
 
-CITY = os.getenv("CITY")
-CROP = os.getenv("CROP", "maize").lower()
-
-
 def get_interpretation(score):
     if score >= 80:
         return "Excellent - harvest now"
@@ -21,16 +17,19 @@ def get_interpretation(score):
     return "Poor - do not harvest this week"
 
 
-def calculate_score(weather_data):
-    print(f"Crop selected: {CROP}")
+def calculate_score(weather_data, crop=None, city=None):
+    crop = (crop or os.getenv("CROP", "maize")).lower()
+    city = city or weather_data.get("city") or os.getenv("CITY")
+
+    print(f"Crop selected: {crop}")
     print("Loading crop rules from crop_config.py...")
 
-    if CROP not in CROP_CONFIG:
-        print(f"ERROR: '{CROP}' not found in crop_config.py")
+    if crop not in CROP_CONFIG:
+        print(f"ERROR: '{crop}' not found in crop_config.py")
         print(f"Available crops: {list(CROP_CONFIG.keys())}")
         return None
 
-    rules = CROP_CONFIG[CROP]
+    rules = CROP_CONFIG[crop]
     temperatures = weather_data["temperatures"]
     rainfall = weather_data["rainfall"]
     humidity = weather_data["humidity"]
@@ -53,13 +52,13 @@ def calculate_score(weather_data):
         score += rules["points_humidity"]
 
     result = {
-        "crop": CROP,
+        "crop": crop,
         "score": score,
         "interpretation": get_interpretation(score),
         "avg_temp": round(avg_temp, 1),
         "avg_rain": round(avg_rain, 1),
         "avg_humidity": round(avg_humidity, 1),
-        "city": CITY,
+        "city": city,
     }
 
     print(f"Score: {score}/100")
@@ -73,7 +72,7 @@ def get_ai_advice(score_data):
     if not groq_api_key:
         raise ValueError("GROQ_API_KEY is missing from .env")
 
-    rules = CROP_CONFIG[CROP]
+    rules = CROP_CONFIG[score_data["crop"]]
     client = Groq(api_key=groq_api_key)
 
     prompt = f"""
@@ -106,8 +105,8 @@ this week, and how to store this crop properly. Use simple language.
     return advice
 
 
-def transform_weather(weather_data):
-    score_data = calculate_score(weather_data)
+def transform_weather(weather_data, crop=None, city=None):
+    score_data = calculate_score(weather_data, crop=crop, city=city)
     if not score_data:
         return None
 
@@ -117,8 +116,9 @@ def transform_weather(weather_data):
 
 
 if __name__ == "__main__":
+    city = os.getenv("CITY")
     test_weather = {
-        "city": CITY,
+        "city": city,
         "dates": [
             "2026-04-16",
             "2026-04-17",
@@ -133,7 +133,7 @@ if __name__ == "__main__":
         "humidity": [58, 61, 65, 57, 60, 63, 59],
     }
 
-    score_data = transform_weather(test_weather)
+    score_data = transform_weather(test_weather, city=city)
 
     if score_data:
         print(f"\nAdvice: {score_data['advice']}")

@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-04-20T11:45:37",
+  "week": "2026-W17",
+  "city": "Addis Ababa",
+  "crop": "sorghum",
+  "score": 30,
+  "interpretation": "Poor - not recommended to harvest this week",
+  "weather_summary": {
+    "avg_temp": 24.0,
+    "avg_rain": 0.9,
+    "avg_humidity": 95.1
+  },
+  "advice": "Don't harvest your sorghum this week, wait for hotter and drier weather. Watch out for mold and rot this week because of the high humidity, and be prepared for potential rain that could damage your crop. When you do harvest, make sure to dry the grains well and store them in a cool, dry place to keep them safe from mold and insects. Also, check the weather forecast regularly to plan your harvest for a week with low rainfall, like below 2mm, to ensure good quality and storage of your sorghum."
+}

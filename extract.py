@@ -5,18 +5,17 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-LATITUDE = os.getenv("LATITUDE")
-LONGITUDE = os.getenv("LONGITUDE")
-CITY = os.getenv("CITY")
+def fetch_weather(city=None, latitude=None, longitude=None):
+    city = city or os.getenv("CITY")
+    latitude = latitude or os.getenv("LATITUDE")
+    longitude = longitude or os.getenv("LONGITUDE")
 
-
-def fetch_weather():
-    print(f"Fetching weather for {CITY}...")
+    print(f"Fetching weather for {city}...")
 
     url = (
         f"https://api.open-meteo.com/v1/forecast"
-        f"?latitude={LATITUDE}"
-        f"&longitude={LONGITUDE}"
+        f"?latitude={latitude}"
+        f"&longitude={longitude}"
         f"&daily=temperature_2m_max,precipitation_sum,relative_humidity_2m_max"
         f"&forecast_days=7"
         f"&timezone=auto"
@@ -41,7 +40,7 @@ def fetch_weather():
             )
 
         return {
-            "city": CITY,
+            "city": city,
             "dates": dates,
             "temperatures": temperatures,
             "rainfall": rainfall,
