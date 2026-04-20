@@ -28,3 +28,8 @@
 2026-04-20 11:33:33,839 - INFO - Transform complete - Crop: maize | Score: 70/100
 2026-04-20 11:33:33,872 - INFO - Load complete - files saved
 2026-04-20 11:33:33,873 - INFO - Pipeline complete
+2026-04-20 11:45:33,380 - INFO - Pipeline started | Crop: sorghum | City: Addis Ababa
+2026-04-20 11:45:34,928 - INFO - Extract complete - 7 days of weather received
+2026-04-20 11:45:37,452 - INFO - Transform complete - Crop: sorghum | Score: 30/100
+2026-04-20 11:45:37,490 - INFO - Load complete - files saved
+2026-04-20 11:45:37,491 - INFO - Pipeline complete
