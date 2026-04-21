@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-04-20T10:24:34",
+  "generated_at": "2026-04-21T08:49:58",
   "week": "2026-W17",
   "city": "Addis Ababa",
   "crop": "rice",
   "score": 30,
   "interpretation": "Poor - not recommended to harvest this week",
   "weather_summary": {
-    "avg_temp": 24.0,
-    "avg_rain": 0.9,
-    "avg_humidity": 95.1
+    "avg_temp": 24.8,
+    "avg_rain": 1.0,
+    "avg_humidity": 94.9
   },
-  "advice": "It's not time to harvest your rice yet, wait until the weather is drier and warmer. This week, watch out for too much rain, as it can damage your rice crop, so keep an eye on the skies and be ready to cover your fields if there's a heavy downpour. When you do harvest, make sure to dry your rice properly to prevent mold and store it in a cool, dry place to keep it fresh. Also, be careful of high humidity, which can cause mold and rot, so consider using a drying method or storing your rice in a well-ventilated area."
+  "advice": "Don't harvest your rice this week, as it's not yet ready. Wait for the rain to stop and the moisture to decrease, as high humidity can damage the crop. This week, watch out for too much rain, which can ruin your rice, and check the weather forecast before harvesting. When you do harvest, dry the rice properly and store it in a dry, well-ventilated place to keep it safe from mold and damage."
 }
